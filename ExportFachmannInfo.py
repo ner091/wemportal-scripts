@@ -120,14 +120,17 @@ def collect_metrics_from_page(driver):
         if metric is not None:
             name = metric["name"]
             t = metric.get("type", "gauge")
-            if t is "gauge":
+            if t == "gauge":
                 value = parse_value(value, metric.get("strip"))
                 data[name] = value
-            if t is "counter":
+            if t == "counter":
                 value = parse_value(value, metric.get("strip"))
                 data[name] = value
-            if t is "info":
+            if t == "info":
                 data[name] = value
+        else:
+            if (debug):
+                print("No Metric for key '{}': {}".format(key, value))
 
     return json.dumps(data)
 
