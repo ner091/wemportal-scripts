@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 debug = False
-seleniumGridUrl = "https://USERNAME:ACCESS_KEY@HUB_SUBDOMAIN.gridlastic.com/wd/hub"
+seleniumGridUrl = "http://localhost:4444/wd/hub"
 
 MAP_METRICS = {
     "Zeitstempel": {"name": "timestamp", "type": "info"},
