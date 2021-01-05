@@ -1,3 +1,4 @@
+import config
 import os
 import time
 import json
@@ -35,8 +36,8 @@ def refresh_page(driver):
 
 
 def login_and_load_fachmann_page(driver):
-    wemportal_user = "YOUR_USERNAME"
-    wemportal_password = "YOUR_PASSWORD"
+    wemportal_user = config.WEMPORTAL_CONFIG['username']
+    wemportal_password = config.WEMPORTAL_CONFIG['password']
     fachmann_password = "11"
 
     driver.get("https://www.wemportal.com/Web/")
