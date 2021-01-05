@@ -1,19 +1,19 @@
 # WEM Portal Scripts
 
-Fork of neiser and modified to be used within HomeAssistant.
+Fork of dm82m and modified to be used within HomeAssistant and selenium grid.
 
-Scripts for Weishaupt WEM Portal using Python and Selenium (and Chromium Headless).
+Scripts for Weishaupt WEM Portal using Python and Selenium Grid (and Chromium Headless in a docker).
 
 ## 3-step Installation
 
 ### On your HomeAssistant instance
 
-You need to install the chromium-driver and also the Python selenium package. Commands may be different on your system, just use them as an idea.
+You need to install the selenium chorme docker image (if you're not using another grid) and also the Python selenium package. Commands may be different on your system, just use them as an idea.
 
 ```bash
-apt-get install chromium-driver
+docker pull kynetiv/selenium-standalone-chromium-pi
 
-sudo -u homeassistant -H -s
+docker run -d -p 4444:4444 --restart unless-stopped --name chrome kynetiv/selenium-standalone-chromium-pi
 
 pip3 install selenium
 ```
