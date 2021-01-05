@@ -12,17 +12,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 debug = False
+seleniumGridUrl = "https://USERNAME:ACCESS_KEY@HUB_SUBDOMAIN.gridlastic.com/wd/hub"
 
 MAP_METRICS = {
     "Zeitstempel": {"name": "timestamp", "type": "info"},
-    "Außentemperatur Aktuell": {"name": "aussentemperatur_aktuell", "type": "gauge", "strip": len(" °C")},
+    "Aussentemperatur Aktuell": {"name": "aussentemperatur_aktuell", "type": "gauge", "strip": len(" °C")},
     "Warmwassertemperatur Aktuell": {"name": "warmwassertemperatur_aktuell", "type": "gauge", "strip": len(" °C")},
 }
-
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-gpu")
-
 
 def refresh_page(driver):
     if (debug):
@@ -194,7 +190,12 @@ class CustomCollector(object):
         self.start_driver()
 
     def start_driver(self):
-        self.driver = webdriver.Chrome(options=chrome_options)
+        self.driver = webdriver.Remote(
+           command_executor=seleniumGridUrl,
+           desired_capabilities={
+                    "browserName": "chrome",
+                    "browserVersion": "latest"
+        })
         login_and_load_fachmann_page(self.driver)
         wait_until_page_loaded(self.driver)
         self.refreshed = True
@@ -206,8 +207,6 @@ class CustomCollector(object):
             self.driver.quit()
         except Exception:
             pass
-        finally:
-            os.system('pkill chromedriver')
 
 
 if __name__ == "__main__":
