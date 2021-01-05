@@ -16,8 +16,13 @@ seleniumGridUrl = "https://USERNAME:ACCESS_KEY@HUB_SUBDOMAIN.gridlastic.com/wd/h
 
 MAP_METRICS = {
     "Zeitstempel": {"name": "timestamp", "type": "info"},
-    "Aussentemperatur Aktuell": {"name": "aussentemperatur_aktuell", "type": "gauge", "strip": len(" °C")},
-    "Warmwassertemperatur Aktuell": {"name": "warmwassertemperatur_aktuell", "type": "gauge", "strip": len(" °C")},
+    "Außentemperatur": {"name": "aussentemperatur", "type": "gauge", "strip": len(" °C")},
+    "Warmwassertemperatur": {"name": "warmwassertemperatur", "type": "gauge", "strip": len(" °C")},
+    "Vorlauftemperatur": {"name": "vorlauftemperatur", "type": "gauge", "strip": len(" °C")},
+    "Rücklauftemperatur": {"name": "rücklauftemperatur", "type": "gauge", "strip": len(" °C")},
+    "Drehzahl Pumpe": {"name": "drehzahl_pumpe", "type": "gauge", "strip": len(" %")},
+    "Ist Leistung": {"name": "leistung", "type": "gauge", "strip": len(" KW")},
+    "Leistungsanforderung": {"name": "leistungsanforderung", "type": "gauge", "strip": len(" %")},
 }
 
 def refresh_page(driver):
