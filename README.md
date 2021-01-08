@@ -38,6 +38,7 @@ Put the changed file **config.py** & **ExportFachmannInfo.py** into your HomeAss
       - water_inlet_set_temperature_celsius
       - water_inlet_temperature_celsius
       - hot_water_temperature_celsius
+      - performance
       - performance_request_ratio
       - dynamic_switch_temperature_difference_kelvin
       - lwt_temperature_celsius
