@@ -24,6 +24,7 @@ MAP_METRICS = {
     'Vorlaufsolltemperatur': {'name': 'water_inlet_set_temperature_celsius', 'type': 'gauge', 'strip': len(' °C')},
     'Vorlauftemperatur': {'name': 'water_inlet_temperature_celsius', 'type': 'gauge', 'strip': len(' °C')},
     'Warmwassertemperatur': {'name': 'hot_water_temperature_celsius', 'type': 'gauge', 'strip': len(' °C')},
+    'Ist Leistung': {'name': 'performance', 'type': 'gauge', 'strip': len(' KW')},
     'Leistungsanforderung': {'name': 'performance_request_ratio', 'type': 'gauge', 'strip': len(' %')},
     'Schaltdifferenz dynamisch': {'name': 'dynamic_switch_temperature_difference_kelvin', 'type': 'gauge', 'strip': len(' K')},
     'LWT': {'name': 'lwt_temperature_celsius', 'type': 'gauge', 'strip': len(' °C')},
