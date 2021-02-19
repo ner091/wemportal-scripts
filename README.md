@@ -3,6 +3,8 @@
 Fork of dm82m and modified to be used within HomeAssistant and selenium grid.
 
 Scripts for Weishaupt WEM Portal using Python and Selenium Grid (and Chromium Headless in a docker).
+## Important
+Weishaupt could ban your ip adress if you run this script without a timeout inbetween. They recomend to run it every 30 minutes.
 
 ## 3-step Installation
 
